@@ -1,0 +1,6 @@
+2025-08-26 15:53:19.832 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration homewhiz which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-08-26 15:53:29.847 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2025-08-26 15:53:29.972 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=10 from 2025-08-17 13:10:37.017794)
+2025-08-26 15:53:53.718 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+

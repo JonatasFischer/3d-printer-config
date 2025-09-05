@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "assist_pipeline.pipelines",
+  "data": {
+    "items": [
+      {
+        "conversation_engine": "conversation.home_assistant",
+        "conversation_language": "pt-BR",
+        "id": "01k2arq6ytev87jgegb1c0v2ef",
+        "language": "pt",
+        "name": "Home Assistant",
+        "stt_engine": null,
+        "stt_language": null,
+        "tts_engine": "tts.google_translate_en_com",
+        "tts_language": "pt-br",
+        "tts_voice": null,
+        "wake_word_entity": null,
+        "wake_word_id": null,
+        "prefer_local_intents": false
+      }
+    ],
+    "preferred_item": "01k2arq6ytev87jgegb1c0v2ef"
+  }
+}

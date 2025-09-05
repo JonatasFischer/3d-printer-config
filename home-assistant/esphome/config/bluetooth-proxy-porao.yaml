@@ -1,0 +1,52 @@
+esphome:
+  name: bluetooth-proxy-porao
+  friendly_name: bluetooth-proxy-porao
+  min_version: 2025.5.0
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "5kbjGmevfxOrTry0+/8XrRFU39wF15QMSH/aTLCqrQM="
+
+ota:
+  - platform: esphome
+    password: "f21795c51a7b436294701994d18044bf"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Bluetooth-Proxy-Porao"
+    password: "dk7qcLiLKpc4"
+
+captive_portal:
+
+esp32_ble_tracker:
+  scan_parameters:
+    # We currently use the defaults to ensure Bluetooth
+    # can co-exist with WiFi In the future we may be able to
+    # enable the built-in coexistence logic in ESP-IDF
+    active: true
+
+bluetooth_proxy:
+  active: true
+
+button:
+  - platform: safe_mode
+    id: button_safe_mode
+    name: Safe Mode Boot
+
+  - platform: factory_reset
+    id: factory_reset_btn
+    name: Factory reset
+    

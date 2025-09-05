@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01K2D0TXFRN7BTW08JKAC04HM5",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "bluetooth-proxy-porao",
+      "friendly_name": "bluetooth-proxy-porao",
+      "mac_address": "D8:3B:DA:A3:F7:F8",
+      "compilation_time": "Aug 11 2025, 19:42:31",
+      "model": "esp32-s3-devkitc-1",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2025.7.5",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 5,
+      "bluetooth_proxy_feature_flags": 127,
+      "suggested_area": "",
+      "bluetooth_mac_address": "D8:3B:DA:A3:F7:FA",
+      "api_encryption_supported": true,
+      "devices": [],
+      "areas": [],
+      "area": {
+        "area_id": 0,
+        "name": ""
+      }
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "button": [
+      {
+        "object_id": "safe_mode_boot",
+        "key": 2037531703,
+        "name": "Safe Mode Boot",
+        "disabled_by_default": false,
+        "icon": "mdi:restart-alert",
+        "entity_category": 1,
+        "device_id": 0,
+        "device_class": "restart"
+      },
+      {
+        "object_id": "factory_reset",
+        "key": 3740619177,
+        "name": "Factory reset",
+        "disabled_by_default": false,
+        "icon": "mdi:restart-alert",
+        "entity_category": 1,
+        "device_id": 0,
+        "device_class": "restart"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1579 @@
+2025-08-17 15:10:27.379 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration homewhiz which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-08-17 15:10:37.084 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2025-08-17 15:10:37.233 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=9 from 2025-08-16 15:54:28.501870)
+2025-08-17 15:11:01.275 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+
+2025-08-17 19:07:10.775 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:33:10.092 WARNING (MainThread) [aioesphomeapi.reconnect_logic] Can't connect to ESPHome API for bluetooth-proxy-porao @ 192.168.0.15: Error connecting to [AddrInfo(family=<AddressFamily.AF_INET: 2>, type=<SocketKind.SOCK_STREAM: 1>, proto=6, sockaddr=IPv4Sockaddr(address='192.168.0.15', port=6053))]: [Errno 113] Connect call failed ('192.168.0.15', 6053) (SocketAPIError)
+2025-08-18 18:43:08.293 ERROR (MainThread) [metno] Access to https://aa015h6buqvih86i1.api.met.no/weatherapi/locationforecast/2.0/complete returned error 'ClientConnectorDNSError'
+2025-08-18 18:43:08.294 ERROR (MainThread) [homeassistant.components.met.coordinator] Error fetching met data: Update failed: 
+2025-08-18 18:43:13.719 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:43:24.188 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/resolver.py", line 117, in resolve
+    resp = await self._resolver.getaddrinfo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+aiodns.error.DNSError: (12, 'Timeout while contacting DNS servers')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 1532, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 1148, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 1179, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/resolver.py", line 126, in resolve
+    raise OSError(None, msg) from exc
+OSError: [Errno None] Timeout while contacting DNS servers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/config/custom_components/homewhiz/cloud.py", line 192, in refresh_connection
+    await self.connect()
+  File "/config/custom_components/homewhiz/cloud.py", line 89, in connect
+    credentials = await login(
+                  ^^^^^^^^^^^^
+        self._cloud_config.username, self._cloud_config.password
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/config/custom_components/homewhiz/api.py", line 112, in login
+    async with session.post(
+               ~~~~~~~~~~~~^
+        "https://api.arcelikiot.com/auth/login",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        json=request_parameters,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/client.py", line 770, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/client.py", line 725, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 642, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 1209, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/aiohttp/connector.py", line 1538, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host api.arcelikiot.com:443 ssl:default [Timeout while contacting DNS servers]
+2025-08-18 18:44:13.721 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:45:13.723 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:46:13.724 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:47:13.725 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:48:13.727 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:49:13.728 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:50:13.729 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:51:13.731 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:52:13.733 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:53:13.735 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:54:13.737 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:55:13.748 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:56:13.750 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:57:13.751 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:58:13.761 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 18:59:13.762 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:00:13.763 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:01:13.765 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:02:13.766 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:03:13.767 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:04:13.769 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:05:13.770 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:06:13.772 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:07:13.772 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:08:13.775 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:09:13.776 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:10:13.778 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:11:13.780 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:12:13.782 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:13:13.784 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:14:13.787 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:15:13.789 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:16:13.791 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:17:13.792 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:18:13.793 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:19:13.795 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:20:13.797 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:21:13.798 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:22:13.800 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:23:13.802 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:24:13.803 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:25:13.805 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:26:13.806 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:27:13.809 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:28:13.810 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:29:13.814 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:30:13.814 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:31:13.815 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:32:13.817 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:33:13.818 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:34:13.819 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:35:13.821 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:36:13.823 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:37:13.824 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:38:13.825 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:39:13.827 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:40:13.828 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:41:13.829 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:42:13.830 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:43:13.831 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:44:13.832 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:45:13.834 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:46:13.838 ERROR (SyncWorker_1) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:47:13.837 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:48:13.840 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:49:13.841 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:50:13.842 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:51:13.844 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:52:13.846 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:53:13.848 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:54:13.850 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:55:13.853 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:56:13.855 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:57:13.856 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:58:13.859 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 19:59:13.860 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:00:13.862 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:01:13.865 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:02:13.866 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:03:13.867 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:04:13.869 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:05:13.871 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:06:13.873 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:07:13.874 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:08:13.876 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:09:13.878 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:10:13.880 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:11:13.883 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:12:13.884 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:13:13.885 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:14:13.887 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:15:13.889 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:16:13.891 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:17:13.892 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:18:13.895 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:19:13.895 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:20:13.895 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+2025-08-18 20:21:13.899 ERROR (MainThread) [homeassistant] Error doing job: Future exception was never retrieved (None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/config/custom_components/homewhiz/cloud.py", line 208, in force_read
+    _LOGGER.debug(f"Force read result: {publish.result()}")
+                                        ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.13/site-packages/awscrt/mqtt.py", line 834, in publish
+    packet_id = _awscrt.mqtt_client_connection_publish(self._binding, topic, payload, qos.value, retain, puback)
+RuntimeError: 5131 (AWS_ERROR_MQTT_NOT_CONNECTED): The requested operation is invalid as the connection is not open.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

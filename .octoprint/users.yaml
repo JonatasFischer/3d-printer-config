@@ -1,0 +1,13 @@
+_version: 2
+jonatas:
+  active: true
+  apikey: null
+  groups:
+  - users
+  - admins
+  password: $argon2id$v=19$m=65536,t=3,p=4$Ogfg/F8LodR6j5EyhnBO6Q$LKm8aktr1NOrlda42QiZme3+lUEnoO/sqekig/Zl3bo
+  permissions: []
+  roles:
+  - user
+  - admin
+  settings: {}

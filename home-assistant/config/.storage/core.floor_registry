@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "core.floor_registry",
+  "data": {
+    "floors": [
+      {
+        "aliases": [],
+        "floor_id": "segundo_piso",
+        "icon": null,
+        "level": 2,
+        "name": "Segundo Piso",
+        "created_at": "2025-08-10T20:10:09.840632+00:00",
+        "modified_at": "2025-08-10T20:10:09.840663+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "terceiro_piso",
+        "icon": null,
+        "level": 3,
+        "name": "Terceiro Piso",
+        "created_at": "2025-08-10T20:11:40.654977+00:00",
+        "modified_at": "2025-08-10T20:11:40.655017+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "porao",
+        "icon": null,
+        "level": 0,
+        "name": "Porao",
+        "created_at": "2025-08-10T20:12:46.601669+00:00",
+        "modified_at": "2025-08-10T20:12:46.601700+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "primeiro_piso",
+        "icon": null,
+        "level": 1,
+        "name": "Primeiro Piso",
+        "created_at": "2025-08-10T20:15:00.377412+00:00",
+        "modified_at": "2025-08-10T20:15:00.377462+00:00"
+      }
+    ]
+  }
+}

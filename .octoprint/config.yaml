@@ -1,0 +1,129 @@
+api:
+  key: 91311E22D8CD41E6A3338A1C31234E84
+plugins:
+  action_command_prompt:
+    enable: always
+  announcements:
+    _config_version: 1
+    channels:
+      _blog:
+        read_until: 1670938200
+      _important:
+        read_until: 1698310200
+      _octopi:
+        read_until: 1670518800
+      _plugins:
+        read_until: 1674453600
+      _releases:
+        read_until: 1666085100
+  classicwebcam:
+    _config_version: 1
+    snapshot: http://localhost:8060/?action=snapshot
+    stream: http://192.168.0.148:8060/?action=stream
+  discovery:
+    upnpUuid: 0587fea7-45f5-4484-bf4d-88c01112bf1a
+  errortracking:
+    unique_id: a1e82a7e-7842-4ad4-809a-a806188f9b8d
+  gcodeviewer:
+    _config_version: 1
+  klipper:
+    _config_version: 4
+    configuration:
+      confirm_reload: false
+      debug_logging: true
+      parse_check: true
+    macros:
+    - macro: M112
+      name: E-Stop
+      sidebar: true
+      tab: true
+    - macro: FIRMWARE_RESTART
+      name: FIRMWARE_RESTART
+      sidebar: true
+      tab: true
+    - macro: G28
+      name: HOME ALL AXIS
+      sidebar: true
+      tab: true
+    - macro: SET_KINEMATIC_POSITION X=150 Y=150 Z=150
+      name: VIRTUAL HOME AT MIDDLE
+      sidebar: true
+      tab: true
+    - macro: PROBE_CALIBRATE
+      name: PROBE_CALIBRATE
+      sidebar: true
+      tab: true
+    - macro: BED_MESH_CALIBRATE
+      name: BED_MESH_CALIBRATE
+      sidebar: true
+      tab: true
+    - macro: SAVE_CONFIG
+      name: SAVE_CONFIG
+      sidebar: true
+      tab: true
+    - macro: SET_KINEMATIC_POSITION Z=0
+      name: ZERA EIXO Z
+      sidebar: true
+      tab: true
+    - macro: G1 F3000 X157 Y150 Z30
+      name: MOVE TO CENTER
+      sidebar: true
+      tab: true
+    - macro: BED_SCREWS_ADJUST
+      name: BED_SCREWS_ADJUST
+      sidebar: true
+      tab: true
+    - macro: ADJUSTED
+      name: ADJUSTED
+      sidebar: true
+      tab: true
+    - macro: ACCEPT
+      name: ACCEPT
+      sidebar: true
+      tab: true
+  softwareupdate:
+    _config_version: 9
+  tracking:
+    enabled: true
+    unique_id: 7f1b45b4-b733-4f02-a475-7d91e8372f16
+  virtual_printer:
+    _config_version: 1
+printerProfiles:
+  default: _default
+serial:
+  additionalPorts:
+  - /tmp/printer
+  autoconnect: true
+  disconnectOnErrors: false
+  port: /tmp/printer
+server:
+  firstRun: false
+  onlineCheck:
+    enabled: true
+  pluginBlacklist:
+    enabled: true
+  secretKey: dlvaAwI2iGINLU3obwlLWmZNZGYznWrh
+  seenWizards:
+    backup: null
+    corewizard: 4
+    file_check: 1
+    tracking: null
+temperature:
+  profiles:
+  - bed: 100
+    chamber: null
+    extruder: 210
+    name: ABS
+  - bed: 60
+    chamber: null
+    extruder: 180
+    name: PLA
+webcam:
+  ffmpeg: /usr/bin/ffmpeg
+  timelapse:
+    fps: 25
+    options:
+      minDelay: 1.0
+      retractionZHop: 0.0
+    postRoll: 0
+    type: zchange

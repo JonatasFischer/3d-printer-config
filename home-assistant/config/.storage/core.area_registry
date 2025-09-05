@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "minor_version": 8,
+  "key": "core.area_registry",
+  "data": {
+    "areas": [
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "sala_de_estar",
+        "labels": [],
+        "name": "Sala de estar",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:03:16.198409+00:00",
+        "modified_at": "2025-08-10T20:03:16.198435+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "cozinha",
+        "labels": [],
+        "name": "Cozinha",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:03:16.199352+00:00",
+        "modified_at": "2025-08-10T20:03:16.199372+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "quarto",
+        "labels": [],
+        "name": "Quarto",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:03:16.200141+00:00",
+        "modified_at": "2025-08-10T20:03:16.200160+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "segundo_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "quarto_casal",
+        "labels": [],
+        "name": "Quarto Casal",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:10:27.267274+00:00",
+        "modified_at": "2025-08-10T20:10:27.267308+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "segundo_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "banheiro",
+        "labels": [],
+        "name": "Banheiro",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:10:46.679332+00:00",
+        "modified_at": "2025-08-10T20:10:46.679368+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "terceiro_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "sotao",
+        "labels": [],
+        "name": "Sotao",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:11:43.462099+00:00",
+        "modified_at": "2025-08-10T20:11:43.462132+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "segundo_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "quarto_heinrich",
+        "labels": [],
+        "name": "Quarto Heinrich",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:12:00.582804+00:00",
+        "modified_at": "2025-08-10T20:12:00.582836+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "segundo_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "quarto_michele",
+        "labels": [],
+        "name": "Quarto Michele",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:12:14.393221+00:00",
+        "modified_at": "2025-08-10T20:12:14.393253+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "porao",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "area_servico",
+        "labels": [],
+        "name": "Area Servico",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:12:52.019596+00:00",
+        "modified_at": "2025-08-10T20:12:52.019624+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "porao",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "sala_recreacao",
+        "labels": [],
+        "name": "Sala recreacao",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:13:50.521144+00:00",
+        "modified_at": "2025-08-10T20:13:50.521176+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "primeiro_piso",
+        "humidity_entity_id": null,
+        "icon": null,
+        "id": "corredor_entrada",
+        "labels": [],
+        "name": "Corredor Entrada",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2025-08-10T20:15:02.533807+00:00",
+        "modified_at": "2025-08-10T20:15:02.533862+00:00"
+      }
+    ]
+  }
+}

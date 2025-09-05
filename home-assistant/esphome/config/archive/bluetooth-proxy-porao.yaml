@@ -1,0 +1,32 @@
+esphome:
+  name: bluetooth-proxy-porao
+  friendly_name: bluetooth-proxy-porao
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "RCieN0dyHNP7+wYsftRlgjpaJeiUBLDz/KjR1SyKq1A="
+
+ota:
+  - platform: esphome
+    password: "d73ef9108238c8108cb4c5ed251956dd"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Bluetooth-Proxy-Porao"
+    password: "0K63qLN1wWZg"
+
+captive_portal:
+    

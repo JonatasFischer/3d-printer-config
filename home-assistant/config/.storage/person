@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "jonatas_fischer",
+        "name": "Jonatas Fischer",
+        "user_id": "80470dfc4c464e59ab1c9213c169c3f9",
+        "device_trackers": []
+      }
+    ]
+  }
+}
