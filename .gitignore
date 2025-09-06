@@ -47,3 +47,4 @@ logfile.log
 .octoprint/backup/
 printer-**.cfg
 printer.cfg.bkp
+.octoprint/logs/
